@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+import Welcome from './Components/Welcome/Welcome';
+import Clock from './Components/Clock/Clock';
+import Contact from './Components/Contact/Contact';
+import Navigation from './Components/Navigation/Navigation';
+
+
+import {Route,Switch}from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation/>
+      <Switch>
+      <Route
+      exact
+      path="/"
+      render={(...props)=> <Welcome {...props}name='Cramer' />}
+      />
+      <Route path="/clock" component={Clock}/>
+      <Route path="/contact" component={Contact}/>
+      <Route path="/welcome/:name" component={Welcome}/>
+      <Route><div>404</div></Route>
+      </Switch>
+
     </div>
   );
 }
