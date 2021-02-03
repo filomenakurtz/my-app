@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 class Contact extends Component{
     constructor(props){
         super(props)
-
         this.state={
             submitted:false,
             formData:{
@@ -22,6 +21,13 @@ handleChange =(event)=>{
     formData[event.target.name]= event.target.value
     this.setState({formData})
 }
+
+
+handleSubmit=(event)=>{
+    
+}
+
+
 
 render(){
     return(

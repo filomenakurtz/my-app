@@ -5,6 +5,7 @@ import Welcome from './Components/Welcome/Welcome';
 import Clock from './Components/Clock/Clock';
 import Contact from './Components/Contact/Contact';
 import Navigation from './Components/Navigation/Navigation';
+import Jeopardy from './Components/Jeopardy/Jeopardy';
 
 
 import {Route,Switch}from 'react-router-dom';
@@ -23,6 +24,7 @@ function App() {
       <Route path="/clock" component={Clock}/>
       <Route path="/contact" component={Contact}/>
       <Route path="/welcome/:name" component={Welcome}/>
+      <Route path="/Jeopardy" component={Jeopardy}/>
       <Route><div>404</div></Route>
       </Switch>
 
